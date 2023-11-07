@@ -135,7 +135,7 @@ class Paperless:
         """
         Return a list of model objects. Requests more than once.
         """
-        response = self._next(f"{self.basepath}/{cls._endpoint}/")
+        response = self._next(f"{self.basepath}/{cls._endpoint}/?ordering=id")
         return [cls(**item) for item in response]
     
 
